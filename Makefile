@@ -3,7 +3,7 @@
 CFLAGS= -O3
 #CFLAGS= -g	# for debugging
 
-ALL=gaffer seqconvert seqstat ONEview syng syngprune seqextract
+ALL=gaffer seqconvert seqstat ONEview syng syngprune seqextract synUtil
 
 DESTDIR=~/bin
 
@@ -52,6 +52,9 @@ gaffer: gaffer.c seqio.o ONElib.o $(UTILS_OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ $(SEQIO_LIBS)
 
 syng: syng.c seqio.o seqhash.o kmerhash.o ONElib.o $(UTILS_OBJS)
+	$(CC) $(CFLAGS) $^ -o $@ $(SEQIO_LIBS)
+
+synUtil: synUtil.c seqio.o seqhash.o kmerhash.o ONElib.o $(UTILS_OBJS)
 	$(CC) $(CFLAGS) $^ -o $@ $(SEQIO_LIBS)
 
 syngprune: syngprune.c seqio.o ONElib.o $(UTILS_OBJS)
