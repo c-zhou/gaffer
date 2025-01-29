@@ -439,7 +439,7 @@ int main_hist2 (int argc, char *argv[])
 
 #define packseq(kh,i) ((kh)->pack + (i)*(kh)->plen)
 
-#define PRINT_SYNC_PROFILE
+#undef PRINT_SYNC_PROFILE
 
 int main_fish (int argc, char *argv[])
 {
