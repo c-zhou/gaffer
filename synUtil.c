@@ -561,9 +561,9 @@ int main_fish (int argc, char *argv[])
           exist = kmerHashFindPacked (khref, packseq(khseq, syncs[i]), &index) ;
           nr = exist? cref[index-1] : 0 ;
           c = (double) nr / ns ;
-          if (c < minC)
+          if (nr < minC)
             low += 1 ;
-          else if (c <= maxC)
+          else if (nr <= maxC)
             high += 1 ;
           w += c ;
 #ifdef PRINT_SYNC_PROFILE
